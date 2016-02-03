@@ -1,3 +1,9 @@
+// Subscriptions
+Meteor.subscribe("messages");
+Meteor.subscribe("allUsernames");
+
+
+
 Template.messages.helpers({
 	messages: Messages.find({})
 })
