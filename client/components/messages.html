@@ -1,10 +1,7 @@
 <template name="messages">
 	<div class="message-history">
-		{{>message text='Message Text'}}
-		{{>message text='Message Swag'}}
-		{{>message text='Message More'}}
-		{{>message text='Message Even More'}}
-		{{>message text='Message Tripleduple'}}
-
+		{{#each messages}}
+			{{>message text=text}}
+		{{/each}}
 	</div>
 </template>
