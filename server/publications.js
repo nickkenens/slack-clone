@@ -8,3 +8,7 @@ Meteor.publish("allUsernames", function(){
 		"services.github.username": 1
 	}});
 });
+
+Meteor.publish("channels", function(){
+	return Channels.find({});
+});

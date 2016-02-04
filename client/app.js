@@ -1,13 +1,9 @@
-// Subscriptions
-Meteor.subscribe("messages");
-Meteor.subscribe("allUsernames");
-
-
-
+// define helper for templates
 Template.messages.helpers({
 	messages: Messages.find({})
 })
 
+// respond to event on template
 Template.footer.events({
 
 
@@ -24,8 +20,9 @@ Template.footer.events({
 	}
 })
 
+// Global helpers to be used within all templates
 Template.registerHelper("usernameFromId", function(userId){
-	var user = Meteor.user.findOne({_id: userId});
+	var user = Meteor.users.findOne({_id: userId});
 	if (typeof user === undefined) {
 		return "Anonymous"
 	}
@@ -43,3 +40,9 @@ Template.registerHelper("timestampToTime", function (timestamp) {
     var seconds = "0" + date.getSeconds();
     return hours + ':' + minutes.substr(minutes.length-2) + ':' + seconds.substr(seconds.length-2);
 });
+
+Template.listings.helpers({
+	channels: function() {
+		return Channels.find({});
+	}
+})
