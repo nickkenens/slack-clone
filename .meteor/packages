@@ -26,3 +26,4 @@ dburles:factory
 accounts-base
 email
 accounts-github
+iron:router
