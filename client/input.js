@@ -9,7 +9,7 @@ Template.footer.events({
 		e.stopPropagation();
 		var message = e.target.value;
 		if (message) {
-			//ternary
+			//ternary operator
 			var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
 			if (charCode == 13) {
 				Meteor.call("newMessage", {

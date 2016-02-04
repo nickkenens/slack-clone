@@ -1,15 +1,19 @@
+// add helpers to messages templates
 Template.messages.helpers({
   messages: Messages.find({})
 });
 
+// set ui config to USERNAME & EMAIL
 Accounts.ui.config({
     passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
 
+// register global helper that will display currentChannel on all templates
 Template.registerHelper('currentChannel', function () {
 	return Session.get('channel');
 });
 
+// register global helper (same as pipes in angular2)
 Template.registerHelper("timestampToTime", function (timestamp) {
 	var date = new Date(timestamp);
 	var hours = date.getHours();
